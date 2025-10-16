@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+use Spatie\Permission\Traits\HasRoles;
+
+class Playersvs extends Authenticatable
+{
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable, HasRoles;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+	protected $table = 'playervs_types';
+    protected $fillable = [
+        'combat_id',
+        'vsname',
+        'textcolor',
+    ];
+
+    protected $hidden = ['created_at', 'updated_at'];
+	
+	public function combatType()
+    {
+        return $this->belongsTo(Combattypes::class, 'combat_id', 'id');
+    }
+	
+	public function color()
+    {
+        return $this->belongsTo(Colors::class, 'textcolor', 'id');
+    }
+}

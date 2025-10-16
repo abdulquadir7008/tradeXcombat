@@ -1,0 +1,19 @@
+td.gridjs-td, th.gridjs-th {
+    border: none;
+}
+.gridjs-tr{
+    border-bottom: 1px solid rgb(43, 49, 62) ;
+}
+.gridjs-wrapper {
+    border: none;
+}
+.transaction_email{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 155px;
+    overflow: hidden;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: #468aef;
+    color: white !important;
+}
