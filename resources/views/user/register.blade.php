@@ -60,28 +60,31 @@
 							<img src="{{ asset('assets/images/Logo-2.png') }}" alt="" height="32" />
 						</div>
 					</div>
-							<h5 class="fs-20 signIn">Sign In</h5>
-							<p class="text-muted">Don’t have an account ? 
-                                <a href="{{ route('user.register') }}" class="get-start fs-20">Get Started</a></p>
+							<h5 class="fs-20 signIn">Sign Up</h5>
+							<p class="text-muted">Already have an account ?
+                                <a href="{{ route('user.login') }}" class="get-start fs-20">Sign In</a></p>
 						</div>
-						{{-- <div class="mt-4 text-center">
-							<p class="mb-0">Don’t have an account ? <a href="{{ route('register') }}" class="fw-semibold text-primary text-decoration-underline"> Get Started </a> </p>
-						</div> --}}
+						
 						<div class="p-2 mt-5">
 							<form method="POST" class="needs-validation" novalidate action="{{ route('login') }}">
 							@csrf
 
-								<div class="mb-3" style="position:relative">
-									<img src="{{ asset('assets/images/primary-shape.png') }}" alt="" height="32" 
-									class="Icon-position"/>
-									<input type="text" style="padding-left:40px" class="form-control" id="useremail" name="email" value="" placeholder="Username, Email, Phone Number" required autofocus>
+								<div class="mb-3">
+									
+									<input type="text" class="form-control" id="useremail" name="email" value="" placeholder="Email or Phone Number" required autofocus>
 									<div class="invalid-feedback">
-										Please enter Username, Email, Phone Number
+										Email or Phone Number
 									</div>
 								</div>
-<div class="mb-4">
-	<p class="mb-0 fs-12 text-muted">Caption text, description, notification </p>
+
+								<div class="mb-3">
+									
+									<input type="text" class="form-control" id="useremail" name="email" value="" placeholder="Username" required autofocus>
+									<div class="invalid-feedback">
+										Username
+									</div>
 								</div>
+
 								<div class="mb-3">
 									<div class="position-relative auth-pass-inputgroup">
 										<input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required name="password">
@@ -92,20 +95,22 @@
 									</div>
 								</div>
 
-								
-
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
-									<label class="form-check-label" for="auth-remember-check">Remember me</label>
-									@if (Route::has('password.request'))
-									<div class="float-end">
-										<a href="{{ route('user.password') }}" class="text-muted">Forgot password?</a>
+								<div class="mb-3">
+									<div class="position-relative auth-pass-inputgroup">
+										<input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Confirm Password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required name="password">
+										<button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+										<div class="invalid-feedback">
+											Please enter Confirm Password
+										</div>
 									</div>
-									@endif
 								</div>
 
+								
+
+							
+
 								<div class="mt-4">
-									<button class="btn btn-primary w-100" type="submit">{{ __('Sign In') }}</button>
+									<button class="btn btn-primary w-100" type="submit">{{ __('Sign Up') }}</button>
 								</div>
 							</form>
 						</div>

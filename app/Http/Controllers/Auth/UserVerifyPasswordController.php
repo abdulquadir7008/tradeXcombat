@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UserLoginController extends Controller
+class UserVerifyPasswordController extends Controller
 {
     public function showUserLoginForm()
     {
-        return view('user.login');
+        return view('user.verify');
     }
 }

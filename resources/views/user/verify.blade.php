@@ -43,6 +43,25 @@
     top: 15px;
     left: 10px;
 	}
+	.return-link{
+		text-align:center;
+		margin:30px;
+	}
+	.return-link a{
+		color:#fff
+	}
+	.return-link span{
+		margin-right:5px;
+	}
+	.inputNumber{
+		text-align:center;
+		
+	}
+	.inputNumber input{
+		width: 12%;
+		display:inline-block;
+		margin: 0 1.5%;
+	}
 </style>
 {{-- @endssection --}}
 
@@ -60,55 +79,35 @@
 							<img src="{{ asset('assets/images/Logo-2.png') }}" alt="" height="32" />
 						</div>
 					</div>
-							<h5 class="fs-20 signIn">Sign In</h5>
-							<p class="text-muted">Don’t have an account ? 
-                                <a href="{{ route('user.register') }}" class="get-start fs-20">Get Started</a></p>
+					<img src="{{ asset('assets/images/ic-email-inbox.png') }}" alt="" height="96" style="margin-top:20px" />
+							<h5 class="fs-20 signIn">Please check your email!</h5>
+							<p style="color:#919EAB;">We've emailed a 6-digit confirmation code. Please enter the code in below box to verify your email.
+                               </p>
 						</div>
-						{{-- <div class="mt-4 text-center">
-							<p class="mb-0">Don’t have an account ? <a href="{{ route('register') }}" class="fw-semibold text-primary text-decoration-underline"> Get Started </a> </p>
-						</div> --}}
+						
 						<div class="p-2 mt-5">
 							<form method="POST" class="needs-validation" novalidate action="{{ route('login') }}">
 							@csrf
 
-								<div class="mb-3" style="position:relative">
-									<img src="{{ asset('assets/images/primary-shape.png') }}" alt="" height="32" 
-									class="Icon-position"/>
-									<input type="text" style="padding-left:40px" class="form-control" id="useremail" name="email" value="" placeholder="Username, Email, Phone Number" required autofocus>
-									<div class="invalid-feedback">
-										Please enter Username, Email, Phone Number
-									</div>
-								</div>
-<div class="mb-4">
-	<p class="mb-0 fs-12 text-muted">Caption text, description, notification </p>
-								</div>
-								<div class="mb-3">
-									<div class="position-relative auth-pass-inputgroup">
-										<input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required name="password">
-										<button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-										<div class="invalid-feedback">
-											Please enter password
-										</div>
-									</div>
+								<div class="mb-3 inputNumber">
+									
+									<input type="text" class="form-control" id="useremail" name="email" value="" required autofocus>
+									<input type="text" class="form-control" id="useremail" name="email" value="" required autofocus>
+									<input type="text" class="form-control" id="useremail" name="email" value="" required autofocus>
+									<input type="text" class="form-control" id="useremail" name="email" value="" required autofocus>
+									<input type="text" class="form-control" id="useremail" name="email" value="" required autofocus>
+									<input type="text" class="form-control" id="useremail" name="email" value="" required autofocus>
+									
 								</div>
 
 								
-
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
-									<label class="form-check-label" for="auth-remember-check">Remember me</label>
-									@if (Route::has('password.request'))
-									<div class="float-end">
-										<a href="{{ route('user.password') }}" class="text-muted">Forgot password?</a>
-									</div>
-									@endif
-								</div>
-
 								<div class="mt-4">
-									<button class="btn btn-primary w-100" type="submit">{{ __('Sign In') }}</button>
+									<button class="btn btn-primary w-100" type="submit">{{ __('Verify') }}</button>
 								</div>
 							</form>
 						</div>
+
+						<div class="return-link"><a href="{{ route('user.login') }}"><span class="mdi mdi-arrow-left"></span>Return to sign in</a></div>
 
 					</div>
 					<!-- end card body -->
