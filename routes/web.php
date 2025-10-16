@@ -13,6 +13,9 @@ use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\Auth\UserLoginController;
+use App\Http\Controllers\Auth\UserRegisterController;
+use App\Http\Controllers\Auth\UserForgetPasswordController;
+use App\Http\Controllers\Auth\UserVerifyPasswordController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -29,6 +32,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('user')->name('user.')->group(function () {
     // User Login: http://127.0.0.1:8000/user/login
     Route::get('/login', [UserLoginController::class, 'showUserLoginForm'])->name('login');
+    Route::get('/register', [UserRegisterController::class, 'showUserLoginForm'])->name('register');
+    Route::get('/password', [UserForgetPasswordController::class, 'showUserLoginForm'])->name('password');
+    Route::get('/verify', [UserVerifyPasswordController::class, 'showUserLoginForm'])->name('verify');
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
 
     // Protected User Routes (Require 'auth' middleware)
